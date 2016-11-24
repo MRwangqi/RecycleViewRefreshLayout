@@ -86,6 +86,9 @@ public class BaseRecycleAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                 if (clickFlag) {
                     if (mHeadView != null)
                         onItemClickListner.onItemClickListner(v, holder.getLayoutPosition() - 1);
+                    else
+                         onItemClickListner.onItemClickListner(v, holder.getLayoutPosition());
+                        
                 }
                 clickFlag = true;
             }
@@ -98,6 +101,9 @@ public class BaseRecycleAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                     return false;
                 if (mHeadView != null)
                     onItemLongClickListner.onItemLongClickListner(v, holder.getLayoutPosition() - 1);
+                else
+                     onItemLongClickListner.onItemLongClickListner(v, holder.getLayoutPosition());
+                    
                 clickFlag = false;
                 return false;
             }
